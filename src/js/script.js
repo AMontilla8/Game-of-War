@@ -142,46 +142,63 @@ class Card {
 		  this.wins(this.player1.name);
 		} else if(numbersArray[player1CardNumber] == numbersArray[player2CardNumber]) {
  
-				// Take 3 cards for both Players hands and then the 4th card will be face up and whoever wins will win war
+				// Take 3 cards from both Players hands and then the 4th card will be face up and whoever wins will win war
 
 			let flag = true;
 			while (flag && cards.length >= 2) {
  	
-				// take 3 cards for each, So that is the reason there are a lot of ifs	
+				// Take 3 cards for each, So that is the reason there are a lot of ifs	
 
 				if(cards.length >= 2)
 					player1Card = this.deck.removeCard();
-				else
+				else{
+					this.player2.wins++;
 					break;
+				}
 				if(cards.length >= 2)
 					player2Card = this.deck.removeCard();
-				else
+				else{
+					this.player1.wins++;
 					break;
+				}
 				if(cards.length >= 2)
 					player1Card = this.deck.removeCard();
-				else
+				else{
+					this.player2.wins++;
 					break;
+				}
 				if(cards.length >= 2)
 					player2Card = this.deck.removeCard();
-				else
+				else{
+					this.player1.wins++;
 					break;
+				}
 				if(cards.length >= 2)
 					player1Card = this.deck.removeCard();
-				else
+				else{
+					this.player2.wins++;
 					break;
+				}
 				if(cards.length >= 2)
 					player2Card = this.deck.removeCard();
-				else
+				else{
+					this.player1.wins++;
 					break;
-				// Now we store the 4th card for both Players
+				}
+
+				// Now store 4th card for both Players
 				if(cards.length >= 2)
 					player1Card = this.deck.removeCard();
-				else
+				else{
+					this.player2.wins++;
 					break;
+				}
 				if(cards.length >= 2)
 					player2Card = this.deck.removeCard();
-				else
+				else{
+					this.player1.wins++;
 					break;
+				}
 
 				this.drawTie(player1Name, player1Card, player2Name, player2Card);
 				let player1CardNumber = player1Card.split(" ")[0];
